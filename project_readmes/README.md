@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-=======
 # <img src="https://cloud.githubusercontent.com/assets/7833470/10899314/63829980-8188-11e5-8cdd-4ded5bcb6e36.png" height="60"> Project 2 - Rails Group Project
 
 **Read this entire document before writing a line of code.**
-## Hi
+
 ## Contents
 
 * **[Overview](#overview):** What is this project?
@@ -194,4 +192,3 @@ Each group will present their project on **12-04-2017** starting at **10:00AM**.
 ###### How will we get feedback from instructors?
 
 See the [feedback doc](./project2-feedback.md) for details.
->>>>>>> 79a35ab9bd85f3ded72d777104e542c268cbb40d
