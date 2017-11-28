@@ -14,7 +14,7 @@
 	<br>
 <%= habit.title%> <%= habit.weekly_goal%> times a week
 </p>
-<button><%=link_to "Delete", delete_path(habit), method: :delete%></button>
+<button><%=link_to "Delete", delete_habit_path(habit), method: :delete%></button>
 <button><%=link_to "Edit", edit_habit_path(habit)%></button>
 <% end %>
 </div>

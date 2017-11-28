@@ -1,7 +1,8 @@
 <div>
   Welcome, <%= @user.first_name %>!
 </div>
-<%= link_to "Edit", edit_user_path(current_user)%>
+<button><%= link_to "Edit", edit_user_path(current_user)%></button>
+<button><%=link_to "Delete", delete_user_path(current_user), method: :delete%></button>
 <hr>
 <table>
   <colgroup>
