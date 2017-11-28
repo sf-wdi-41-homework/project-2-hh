@@ -15,4 +15,8 @@ get '/logged_habits/new', to: 'logged_habits#new', as:"new_logged_habit"
 post "/logged_habits", to: 'logged_habits#create'
 post "/logged_habits", to: 'logged_habits#create'
 delete '/habits/:id', to: 'habits#destroy', as:"delete"
+get "/habits/:id/edit", to: 'habits#edit', as: 'edit_habit'
+put '/habits/:id', to: 'habits#update'
+
+resources "habits"
 end
