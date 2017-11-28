@@ -7,7 +7,7 @@ end
 
 
 gem "figaro"
-gem 'wdm', '>= 0.1.0'
+# gem 'wdm', '>= 0.1.0'
 gem 'groupdate'
 gem 'ffaker'
 gem 'jquery'
