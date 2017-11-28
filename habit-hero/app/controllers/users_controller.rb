@@ -30,8 +30,7 @@ class UsersController < ApplicationController
   		redirect_to @user
   	end 
   	def destroy
-  		p user = User.find_by_id(params[:id])
-  		user = User.find_by_id(params[:id])
+  		user = User.find(params[:id])
   		user.destroy
   		redirect_to "/"
   	end 
