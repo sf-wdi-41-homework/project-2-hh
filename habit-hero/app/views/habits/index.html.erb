@@ -1,0 +1,35 @@
+<% @habits.each do |habit|%>
+<div>
+	<label>Habit</label>
+	<br>
+<%= habit.title%>
+<br>
+<p>
+	<label>Description</label>
+	<br>
+<%= habit.description%>
+</p>
+<p>
+	<label>Weekly Goal</label>
+	<br>
+<%= habit.title%> <%= habit.weekly_goal%> times a week
+</p>
+<button><%=link_to "Delete", delete_path(habit), method: :delete%></button>
+<% end %>
+</div>
+
+
+<%= form_with scope: :habit, url: "/habits" do|f|%>
+  <div>
+    <%= f.text_field :title, placeholder: "Habit" %>
+  </div>
+    <div>
+    <%= f.text_area :description, placeholder: "Description" %>
+  </div>
+    <div>
+    <%= f.number_field :weekly_goal, placeholder: "Weekly_goal" %>
+  </div>
+
+  <%= f.submit "Add Habit" %>
+<% end %>
+
