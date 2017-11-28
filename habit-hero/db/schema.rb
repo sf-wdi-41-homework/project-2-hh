@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171127215123) do
+ActiveRecord::Schema.define(version: 20171128225704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,10 @@ ActiveRecord::Schema.define(version: 20171127215123) do
     t.bigint "habit_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "date_completed"
+    t.bigint "user_id"
     t.index ["habit_id"], name: "index_logged_habits_on_habit_id"
+    t.index ["user_id"], name: "index_logged_habits_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,4 +47,5 @@ ActiveRecord::Schema.define(version: 20171127215123) do
 
   add_foreign_key "habits", "users"
   add_foreign_key "logged_habits", "habits"
+  add_foreign_key "logged_habits", "users"
 end
