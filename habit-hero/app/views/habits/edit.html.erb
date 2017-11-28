@@ -1,0 +1,11 @@
+<%= form_with model: @habit do |form| %>
+<label>Title:</label>
+<%= form.text_field :title%>
+<label>Description</label>
+<%= form.text_area :description%>
+<label>WeeklyGoal</label>
+<%= form.text_area :weekly_goal%>
+
+
+<%= form.submit "Submit" %>
+<% end%>
