@@ -18,13 +18,13 @@
       <a href="index.html" class="brand-logo">Habit Hero</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="profile.html">Habits</a></li>
+        <li><a href="habits.html">Habits</a></li>
         <li><a href="week.html">Week</a></li>
         <li><a href="overview.html">Overview</a></li>
         <li><a href="profile.html">Profile</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="profile.html">Habits</a></li>
+        <li><a href="habits.html">Habits</a></li>
         <li><a href="week.html">Week</a></li>
         <li><a href="overview.html">Overview</a></li>
         <li><a href="profile.html">Profile</a></li>
@@ -33,83 +33,29 @@
   </nav>
 
   <main id="main">
-    <section id="day-tracker" class="container">
-      <h1>Daily Tracker</h1>
-      <ul>
-        <li class="row">
-          <div class="col s8">
-            <h3>Task</h3>
+    <section id="profile" class="container">
+      <h1>Edit Profile</h1>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input value="Nick" id="first_name" type="text" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input value="Lee" id="last_name" type="text" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
           </div>
-          <div class="col s4">
-            <h3>Completed</h3>
+          <div class="row">
+            <div class="input-field col s12">
+              <input value="nhl1013@gmail.com" id="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
           </div>
-        </li>
-        <form action="">
-          <li class="row">
-            <div class="col s8">
-              <h4>Sleep 8 hours</h4>
-            </div>
-            <div class="col s4">
-              <input type="checkbox" id="test5" />
-              <label for="test5"></label>
-            </div>
-          </li>
-          <li class="row">
-            <div class="col s8">
-              <h4>Meditate</h4>
-            </div>
-            <div class="col s4">
-              <input type="checkbox" id="test6" />
-              <label for="test6"></label>
-            </div>
-          </li>
-          <li class="row">
-            <div class="col s8">
-              <h4>Gym</h4>
-            </div>
-            <div class="col s4">
-              <input type="checkbox" id="test7" />
-              <label for="test7"></label>
-            </div>
-          </li>
-          <li class="row">
-            <div class="col s8">
-              <h4>Read 2 Chapters</h4>
-            </div>
-            <div class="col s4">
-              <input type="checkbox" id="test8" />
-              <label for="test8"></label>
-            </div>
-          </li>
-          <li class="row">
-            <div class="col s8">
-              <h4>Cook Dinner</h4>
-            </div>
-            <div class="col s4">
-              <input type="checkbox" id="test9" />
-              <label for="test9"></label>
-            </div>
-          </li>
-          <li class="row">
-            <div class="col s8">
-              <h4>Make Tea</h4>
-            </div>
-            <div class="col s4">
-              <input type="checkbox" id="test10" />
-              <label for="test10"></label>
-            </div>
-          </li>
-          <li>
-            <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-          </li>
-          <li>
-            <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Submit
-             <i class="material-icons right">send</i>
-           </button>
-
-          </li>
+          <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Save</button>
         </form>
-      </ul>
+      </div>
     </section>
   </main>
 
