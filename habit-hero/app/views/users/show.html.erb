@@ -1,3 +1,35 @@
 <div>
   Welcome, <%= @user.first_name %>!
 </div>
+<hr>
+<table>
+  <colgroup>
+    <col style="background-color: yellow">
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+  </colgroup>
+  <tr>
+    <th>Habits</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+    <th>Sunday</th>
+  </tr>
+  <% @habits.each do |habit| %>
+    <tr>
+      <td><%= habit.title%> </td>
+      <% habit.logged_habits.each do |log| %>
+      <td><%= log.created_at %> </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
