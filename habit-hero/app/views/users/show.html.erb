@@ -1,6 +1,7 @@
 <div>
   Welcome, <%= @user.first_name %>!
 </div>
+<%= link_to "Edit", edit_user_path(current_user)%>
 <hr>
 <table>
   <colgroup>
