@@ -1,36 +1,42 @@
-<% @habits.each do |habit|%>
-<div>
-	<label>Habit</label>
-	<br>
-<%= habit.title%>
-<br>
-<p>
-	<label>Description</label>
-	<br>
-<%= habit.description%>
-</p>
-<p>
-	<label>Weekly Goal</label>
-	<br>
-<%= habit.title%> <%= habit.weekly_goal%> times a week
-</p>
-<button><%=link_to "Delete", delete_path(habit), method: :delete%></button>
-<button><%=link_to "Edit", edit_habit_path(habit)%></button>
-<% end %>
+<section id="day-tracker" class="container">
+	<h1>Daily Tracker</h1>
+	<ul>
+		<li class="row">
+			<div class="col s8">
+				<h3>Task</h3>
+			</div>
+			<div class="col s4">
+				<h3>Completed</h3>
+			</div>
+		</li>
+		<% @habits.each do |habit|%>
+		<li class="row">
+			<div class="col s8">
+				<h4><%= habit.title%></h4>
+				<button><%=link_to "Delete", delete_path(habit), method: :delete%></button>
+				<button><%=link_to "Edit", edit_habit_path(habit)%></button>
+			</div>
+			<div class="col s4">
+				<input type="checkbox" id="test5" />
+				<label for="test5"></label>
+			</div>
+		</li>
+		<% end %>
+	</ul>
+</section>
+
+<div class="container">
+	<%= form_with scope: :habit, url: "/habits" do|f|%>
+		<div>
+			<%= f.text_field :title, placeholder: "Habit" %>
+		</div>
+		<div>
+			<%= f.text_area :description, placeholder: "Description" %>
+		</div>
+		<div>
+			<%= f.number_field :weekly_goal, placeholder: "Weekly_goal" %>
+		</div>
+
+		<%= f.submit "Add Habit" %>
+	<% end %>
 </div>
-
-
-<%= form_with scope: :habit, url: "/habits" do|f|%>
-  <div>
-    <%= f.text_field :title, placeholder: "Habit" %>
-  </div>
-    <div>
-    <%= f.text_area :description, placeholder: "Description" %>
-  </div>
-    <div>
-    <%= f.number_field :weekly_goal, placeholder: "Weekly_goal" %>
-  </div>
-
-  <%= f.submit "Add Habit" %>
-<% end %>
-
