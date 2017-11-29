@@ -14,8 +14,8 @@
 		<li class="row">
 			<div class="col s8">
 				<h4><%= habit.title%></h4>
-				<button><%=link_to "Delete", delete_habit_path(habit), method: :delete%></button>
-				<button><%=link_to "Edit", edit_habit_path(habit)%></button>
+
+				<button><%=link_to "show", show_habit_path(habit)%></button>
 			</div>
 			<div class="col s4">
 				<input type="checkbox" id="test5" />

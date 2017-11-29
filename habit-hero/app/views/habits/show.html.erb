@@ -1,0 +1,8 @@
+<div>
+<%=@habit.title%>
+<%=@habit.description%>
+<%=@habit.weekly_goal%>
+</div>
+
+				<button><%=link_to "Delete", delete_habit_path(@habit), method: :delete%></button>
+				<button><%=link_to "Edit", edit_habit_path(@habit)%></button>
