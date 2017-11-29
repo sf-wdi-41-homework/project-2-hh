@@ -21,7 +21,10 @@
 
 $(document).ready(function(){
   console.log("JQuery has loaded")
-
+   $('.modal').modal();
   // Enable modals for site
-  $('.modal').modal();
+  $('#new-habit-button').on('click',function(e){
+    e.preventDefault()
+    $('#new-habit-modal').modal('open');
+  })
 })
