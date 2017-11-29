@@ -16,10 +16,10 @@ post "/logged_habits", to: 'logged_habits#create'
 post "/logged_habits", to: 'logged_habits#create'
 delete '/habits/:id', to: 'habits#destroy', as:"delete_habit"
 get "/habits/:id/edit", to: 'habits#edit', as: 'edit_habit'
-put '/habits/:id', to: 'habits#update'
+put '/habits/:id', to: 'habits#update', as: 'update_habit'
 get "/users/:id/edit", to: 'users#edit', as: 'edit_user'
 patch '/users/:id', to: 'users#update'
 delete '/users/:id', to: 'users#destroy', as:"delete_user"
+get '/habits/:id', to: 'habits#show', as:'show_habit'
 
-resources "habits"
 end

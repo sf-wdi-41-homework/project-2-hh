@@ -28,6 +28,11 @@ class HabitsController < ApplicationController
 		@habit.update(habit_params)
 		redirect_to "/habits"
 	end 
+	def show
+		user = current_user
+		habits = user.habits.all
+		@habit = habits.find(params[:id])
+	end 
 
 	def destroy
 		user = current_user
