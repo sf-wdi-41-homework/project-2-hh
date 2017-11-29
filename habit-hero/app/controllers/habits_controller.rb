@@ -3,9 +3,7 @@ class HabitsController < ApplicationController
 		user = current_user
 		@habits = user.habits
 	end
-	def new
-		@habit = Habit.new
-	end
+
 	def create
 		user = current_user
 		@habit = user.habits.new(habit_params)
@@ -16,11 +14,13 @@ class HabitsController < ApplicationController
 			redirect_to "/habits"
 		end
 	end
+
 	def edit
 		user = current_user
 		habits = user.habits.all
 		@habit = habits.find(params[:id])
 	end
+
 	def update
 		user = current_user
 		habits = user.habits.all
@@ -28,6 +28,7 @@ class HabitsController < ApplicationController
 		@habit.update(habit_params)
 		redirect_to "/habits"
 	end
+
 	def show
 		user = current_user
 		habits = user.habits.all
