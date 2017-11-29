@@ -10,7 +10,7 @@
 				<h3>Completed</h3>
 			</div>
 		</li>
-		<% @habits.each do |habit|%>
+		<% @habits.each_with_index do |habit, i|%>
 		<li class="row">
 			<div class="col s8">
 				<h4><%= habit.title%></h4>
@@ -18,8 +18,15 @@
 				<button><%=link_to "show", show_habit_path(habit)%></button>
 			</div>
 			<div class="col s4">
-				<input type="checkbox" id="test5" />
-				<label for="test5"></label>
+				<%= form_with scope: :logged_habit, id: "habit_check#{i}",url: "/logged_habits" do|f|%>
+					<div>
+						<%= f.hidden_field :habit_id, value: "#{habit.id}"%>
+					</div>
+					<div>
+						<%= f.check_box :checkbox, id: "#{i}",  :onclick => "javascript: document.getElementById('habit_check#{i}').submit();"%>
+						<label for="<%=i%>"></label>
+					</div>
+				<% end %>
 			</div>
 		</li>
 		<% end %>

@@ -3,36 +3,36 @@ class HabitsController < ApplicationController
 		user = current_user
 		@habits = user.habits
 	end
-	def new 
+	def new
 		@habit = Habit.new
-	end 
+	end
 	def create
 		user = current_user
 		@habit = user.habits.new(habit_params)
 		@habit.save
 		if @habit.save
 			redirect_to "/habits"
-		else 
+		else
 			redirect_to "/habits"
-		end 
-	end 
+		end
+	end
 	def edit
 		user = current_user
 		habits = user.habits.all
 		@habit = habits.find(params[:id])
-	end 
+	end
 	def update
 		user = current_user
 		habits = user.habits.all
 		@habit = habits.find(params[:id])
 		@habit.update(habit_params)
 		redirect_to "/habits"
-	end 
+	end
 	def show
 		user = current_user
 		habits = user.habits.all
 		@habit = habits.find(params[:id])
-	end 
+	end
 
 	def destroy
 		user = current_user
@@ -42,8 +42,8 @@ class HabitsController < ApplicationController
 		redirect_to "/habits"
 	end
 
-	private 
+	private
 	def habit_params
 		params.require(:habit).permit(:title, :description,:weekly_goal)
-	end 
+	end
 end
