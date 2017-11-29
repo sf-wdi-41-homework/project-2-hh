@@ -12,6 +12,9 @@
 //
 //= require jquery3
 //= require jquery_ujs
+//= require jquery.turbolinks
+//= require turbolinks
+//= require turbolinks-compatibility
 //= require materialize
 //= require_tree .
 //= require_self
