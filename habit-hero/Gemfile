@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'chartkick'
 gem "figaro"
 gem 'jquery-turbolinks'
 # gem 'wdm', '>= 0.1.0'
