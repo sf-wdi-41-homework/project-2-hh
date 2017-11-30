@@ -4,11 +4,11 @@
 <%=@habit.weekly_goal%>
 </div>
 
-				<button><%=link_to "Delete", delete_habit_path(@habit), method: :delete%></button>
-				<button><%=link_to "Edit", edit_habit_path(@habit)%></button>
+<button><%=link_to "Delete", delete_habit_path(@habit), method: :delete%></button>
+<button><%=link_to "Edit", edit_habit_path(@habit)%></button>
 
 				
 
-				<%= line_chart @habit.logged_habits.group_by_day(:date_completed).count, xtitle: "Time", ytitle: "XD" %>
+<%= line_chart @habit.logged_habits.group_by_day(:date_completed).count, xtitle: "Time", ytitle: "XD" %>
 			
 
