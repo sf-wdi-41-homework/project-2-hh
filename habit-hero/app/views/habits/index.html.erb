@@ -10,23 +10,11 @@
 				<h3>Completed</h3>
 			</div>
 		</li>
-		<% @habits.each_with_index do |habit, i|%>
+		<% @habits_without_logs.each_with_index do |habit, i|%>
+
 		<li class="row">
 			<div class="col s8">
 				<h4><%= habit.title%></h4>
-				<% habit.logged_habits.each do |logged_habit| %>
-					<!-- Grabbing time zone offset from UTC to lcoal-->
-					<% tz_offset = logged_habit.date_completed.localtime.utc_offset %>
-					<!-- Converting stored UTC time to local via offset -->
-					<% log_time = logged_habit.date_completed + tz_offset %>
-
-					<p><%= logged_habit.date_completed.to_date %> </p>
-					<p><%= log_time.to_date %> </p>
-					<p><%= DateTime.now.to_date%></p>
-					<p><%= log_time.to_date == DateTime.now.to_date ? true : false %> </p>
-
-				<% end %>
-
 				<button><%=link_to "show", show_habit_path(habit)%></button>
 			</div>
 			<div class="col s4">

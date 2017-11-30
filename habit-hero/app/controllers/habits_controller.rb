@@ -2,15 +2,16 @@ class HabitsController < ApplicationController
 	def index
 		user = current_user
 		@habits = user.habits
-
-		p DateTime.now
-		
+		@habits_without_logs = []
+		@habits.each_with_index do |habit, i|
+			logs = LoggedHabit.where({user_id: user.id,habit_id: habit.id, created_at: Time.now.midnight..(Time.now.midnight + 1.day) })
+			logs.blank? ? @habits_without_logs << habit : false
+		end
 	end
 
 	def create
 		user = current_user
 		@habit = user.habits.new(habit_params)
-		@habit.save
 		if @habit.save
 			redirect_to "/habits"
 		else
