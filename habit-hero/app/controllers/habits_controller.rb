@@ -2,6 +2,9 @@ class HabitsController < ApplicationController
 	def index
 		user = current_user
 		@habits = user.habits
+
+		p DateTime.now
+		
 	end
 
 	def create
