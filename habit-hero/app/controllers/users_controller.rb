@@ -18,7 +18,25 @@ class UsersController < ApplicationController
 	end
 	def show
     @user = User.find_by_id(params[:id])
-		@habits = @user.habits
+		habits = @user.habits
+    # @weekly_logs will be sent to views in order to render logs per habit per day
+		@weekly_logs = []
+		habits.each do |habit|
+			p "Logged habit data"
+      # week_hash will contain the logs for each habit
+			week_hash = {habit: habit.title, week: []}
+			# logs_hash holds logs for each habit
+			logs_hash = habit.logged_habits.group_by_week(week_start: :mon) { |h| h.date_completed}
+			logs_hash.each_value do |logged_habit|
+				logged_habit.each do |log|
+					week_hash[:week] << log.date_completed.localtime.to_date.wday
+					p "this is week hash"
+					p week_hash
+				end
+				@weekly_logs << week_hash
+			end
+			p @weekly_logs
+		end
   end
   def edit
   	@user = User.find_by_id(params[:id])

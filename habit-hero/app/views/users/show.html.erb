@@ -4,34 +4,64 @@
 <button><%= link_to "Edit", edit_user_path(current_user)%></button>
 <button><%=link_to "Delete", delete_user_path(current_user), method: :delete%></button>
 <hr>
-<table>
-  <colgroup>
-    <col style="background-color: yellow">
-    <col>
-    <col>
-    <col>
-    <col>
-    <col>
-    <col>
-    <col>
-  </colgroup>
-  <tr>
-    <th>Habits</th>
-    <th>Monday</th>
-    <th>Tuesday</th>
-    <th>Wednesday</th>
-    <th>Thursday</th>
-    <th>Friday</th>
-    <th>Saturday</th>
-    <th>Sunday</th>
-  </tr>
-  <% @habits.each do |habit| %>
-    <tr>
-      <td><%= habit.title%> </td>
-      <% habit.logged_habits.each do |log| %>
-      <td><%= log.date_completed %> </td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
+
+<section id="week-tracker" class="container">
+  <h1>Weekly Tracker</h1>
+  <ul>
+    <li class="row">
+      <div class="col s5">
+        <p>Task</p>
+      </div>
+      <div class="col s1">
+        <p>Mon</p>
+      </div>
+      <div class="col s1">
+        <p>Tue</p>
+      </div>
+      <div class="col s1">
+        <p>Wed</p>
+      </div>
+      <div class="col s1">
+        <p>Thu</p>
+      </div>
+      <div class="col s1">
+        <p>Fri</p>
+      </div>
+      <div class="col s1">
+        <p>Sat</p>
+      </div>
+      <div class="col s1">
+        <p>Sun</p>
+      </div>
+    </li>
+  
+    <li class="row">
+      <div class="col s5">
+        <h4>Sleep 8 hours</h4>
+      </div>
+      <div class="col s1">
+        <i class="material-icons dp48">check</i>
+      </div>
+      <div class="col s1">
+        <p></p>
+      </div>
+      <div class="col s1">
+        <i class="material-icons dp48">check</i>
+      </div>
+      <div class="col s1">
+        <p></p>
+      </div>
+      <div class="col s1">
+        <i class="material-icons dp48">check</i>
+      </div>
+      <div class="col s1">
+        <p></p>
+      </div>
+      <div class="col s1">
+        <i class="material-icons dp48">check</i>
+      </div>
+    </li>
+  </ul>
+</section>
+
 
