@@ -37,6 +37,22 @@ class HabitsController < ApplicationController
 		user = current_user
 		habits = user.habits.all
 		@habit = habits.find(params[:id])
+		weekly_count = @habit.logged_habits.group_by_week(:date_completed, week_start: :mon).count
+		p "DB Query"
+		p @habit.logged_habits.group_by_week(:date_completed, week_start: :mon).count
+		p @habit.logged_habits.group_by_week(:date_completed, week_start: :mon).count.class
+		p "Stored query"
+		p weekly_count
+		p weekly_count.class
+		@weekly_count = {}
+		weekly_count.each_pair do | key, value | 
+			@weekly_count[key] = (value.to_f / @habit.weekly_goal.to_f) * 100.00
+
+		end 
+		p "Habit view data"
+		p @weekly_count
+		p @weekly_count.class
+
 	end
 
 	def destroy
