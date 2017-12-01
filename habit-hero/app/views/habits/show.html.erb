@@ -8,7 +8,9 @@
 <button><%=link_to "Edit", edit_habit_path(@habit)%></button>
 
 				
+<%= line_chart @habit.logged_habits.group_by_week(:date_completed).count, xtitle: "Time", ytitle: "XD",
+min: 0, max: 7 %>
 
-<%= line_chart @habit.logged_habits.group_by_day(:date_completed).count, xtitle: "Time", ytitle: "XD" %>
-			
+
+
 
