@@ -8,8 +8,19 @@
 <button><%=link_to "Edit", edit_habit_path(@habit)%></button>
 
 				
-<%= line_chart @habit.logged_habits.group_by_week(:date_completed).count, xtitle: "Time", ytitle: "XD",
-min: 0, max: 7 %>
+<%= line_chart @habit.logged_habits.group_by_week(:date_completed).count, xtitle: "Time", ytitle: "Completed",
+min: 0, max: 7,download: "boom" %>
+
+<%= line_chart @habit.logged_habits.group(:date_completed).count,
+library: {
+      xAxis: {
+        dateTimeLabelFormats: {
+            week: '%e. %b',
+    		month: '%b \'%y'
+        },
+      }
+    }%>
+
 
 
 

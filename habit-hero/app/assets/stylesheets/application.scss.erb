@@ -1,6 +1,6 @@
 @import "materialize/components/color";
 $primary-color: color("blue", "lighten-2") !default;
-$secondary-color: color("yellow", "base") !default;
+// $secondary-color: color("green", "base") !default;
 @import "materialize";
 
  @import "https://fonts.googleapis.com/icon?family=Material+Icons";
@@ -10,7 +10,7 @@ $secondary-color: color("yellow", "base") !default;
  }
 
  #welcome{
-   background: url(../images/home_cover.jpg) no-repeat;
+   background: url(<%= asset_path 'home_cover.jpg' %>) no-repeat;
    background-size: cover;
    width: 100%;
    height: 600px;
