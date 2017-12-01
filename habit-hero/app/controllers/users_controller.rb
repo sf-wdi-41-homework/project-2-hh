@@ -35,7 +35,6 @@ class UsersController < ApplicationController
 				end
 				@weekly_logs << week_hash
 			end
-			p @weekly_logs
 		end
   end
   def edit
