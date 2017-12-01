@@ -19,7 +19,9 @@
 //= require_tree .
 //= require_self
 //= require Chart.bundle
+
 //= require chartkick
+
 
 $(document).ready(function(){
   console.log("JQuery has loaded")
