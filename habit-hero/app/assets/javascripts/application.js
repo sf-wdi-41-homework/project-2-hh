@@ -23,7 +23,9 @@
 
 $(document).ready(function(){
   console.log("JQuery has loaded")
-   $('.modal').modal();
+  $('.modal').modal();
+	$(".button-collapse").sideNav();
+
   // Enable modals for site
   $('#new-habit-button').on('click',function(e){
     e.preventDefault()

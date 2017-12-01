@@ -10,14 +10,14 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			login(@user)
-			redirect_to @user
+			redirect_to daily_tracker_path
 		else
 			flash[:error] = @user.errors.full_messages.join(' ')
-			redirect_to "/users/new"
+			redirect_to "/signup"
 		end
 	end
 	def show
-    @user = User.find_by_id(params[:id])
+    @user = User.find(session[:user_id])
 		habits = @user.habits
     # @weekly_logs will be sent to views in order to render logs per habit per day
 		@weekly_logs = []
