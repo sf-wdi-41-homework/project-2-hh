@@ -1,19 +1,37 @@
-<p>SignUp</p>
-<%= form_with scope: :user, url: "/users" do|f|%>
-  <div>
-    <%= f.text_field :first_name, placeholder: "FirstName" %>
+<section class="container" id="login">
+  <h1>Sign Up!</h1>
+  <div class="row">
+    <%= form_with class: "col s12",scope: :user, url: "/users" do|f|%>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= f.text_field :first_name,id: "first_name",class: "validate", placeholder: "First Name" %>
+          <%= f.label :first_name %> 
+        </div>
+        <div class="input-field col s6">
+          <%= f.text_field :last_name,id: "last_name",class: "validate", placeholder: "Last Name" %>
+          <%= f.label :last_name %> 
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.text_field :username,id: "username",class: "validate", placeholder: "Username" %>
+          <%= f.label :username %> 
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.text_field :email,id: "email",class: "validate", placeholder: "Email" %>
+          <%= f.label :email %> 
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.password_field :password,id: "pass",class: "validate", placeholder: "Password" %>
+          <%= f.label :password %> 
+        </div>
+      </div>
+      <%= f.submit "Sign Up", class: "btn waves-effect waves-light btn-large" %>
+    <% end %>
+    
   </div>
-  <div>
-    <%= f.text_field :last_name, placeholder: "LastName" %>
-  </div>
-  <div>
-    <%= f.text_field :username, placeholder: "Username" %>
-  </div>
-  <div>
-    <%= f.text_field :email, placeholder: "Email" %>
-  </div>
-  <div>
-    <%= f.password_field :password, placeholder: "Password" %>
-  </div>
-  <%= f.submit "Sign Up" %>
-<% end %>
+</section>
