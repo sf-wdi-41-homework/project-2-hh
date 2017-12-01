@@ -41,6 +41,11 @@
           <h4><%=week[:habit]%> </h4>
         </div>
         <div class="col s1">
+          <% if week[:week].include?(0) %>
+            <i class='material-icons dp48'>check</i>
+          <% end %>
+        </div>
+        <div class="col s1">
           <% if week[:week].include?(1) %>
             <i class='material-icons dp48'>check</i>
           <% end %>
@@ -67,11 +72,6 @@
         </div>
         <div class="col s1">
           <% if week[:week].include?(6) %>
-            <i class='material-icons dp48'>check</i>
-          <% end %>
-        </div>
-        <div class="col s1">
-          <% if week[:week].include?(0) %>
             <i class='material-icons dp48'>check</i>
           <% end %>
         </div>
