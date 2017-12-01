@@ -73,8 +73,19 @@ $secondary-color: color("yellow", "base") !default;
          display: table-cell;
          float:none;
          vertical-align: middle;
+         &.s5{
+           width: 5/12 * 100%;
+         }
+         &.s1{
+           width: 1/12 * 100%;
+         }
          i{
+           display: block;
+           width: 100%;
            color: #00897b;
+           &.incomplete{
+             opacity: 0;
+           }
          }
        }
      }
