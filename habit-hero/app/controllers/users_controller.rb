@@ -9,12 +9,14 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
+        HhMailer.sample_email(@user).deliver_later
 			login(@user)
 			redirect_to daily_tracker_path
 		else
 			flash[:error] = @user.errors.full_messages.join(' ')
 			redirect_to "/signup"
 		end
+	
 	end
 	def show
     @user = User.find(session[:user_id])
