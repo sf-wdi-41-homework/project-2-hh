@@ -19,7 +19,6 @@
 //= require_tree .
 //= require_self
 //= require Chart.bundle
-
 //= require chartkick
 
 

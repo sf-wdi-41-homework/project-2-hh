@@ -27,4 +27,5 @@ Rails.application.routes.draw do
 
   # Static Routes
   get '/home', to: 'statics#index', as: 'home'
+  resources :charges
 end
