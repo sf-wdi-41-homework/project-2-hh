@@ -30,7 +30,7 @@ class HabitsController < ApplicationController
 		habits = user.habits.all
 		@habit = habits.find(params[:id])
 		@habit.update(habit_params)
-		redirect_to "/habits"
+		redirect_to show_habit_path(@habit)
 	end
 
 	def show
@@ -50,7 +50,7 @@ class HabitsController < ApplicationController
 		habits = user.habits.all
 		habit = habits.find(params[:id])
 		habit.destroy
-		redirect_to "/habits"
+		redirect_to daily_tracker_path
 	end
 
 	private
