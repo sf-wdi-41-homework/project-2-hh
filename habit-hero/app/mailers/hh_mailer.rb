@@ -4,7 +4,7 @@ class HhMailer < ApplicationMailer
 
   def sample_email(user)
     @user = user
-    mail(to: @user.email, subject: 'Sample Email') do |format|
+    mail(to: @user.email, subject: 'Welcome Email') do |format|
         format.text
     end
   end
