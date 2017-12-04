@@ -84,25 +84,7 @@ Rails.application.configure do
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
-  end
-  config.action_mailer.raise_delivery_errors = true
-
-  # ActionMailer Config
-
-  config.action_mailer.default_url_options = { :host => 'https://young-sands-34754.herokuapp.com/' }
-  config.action_mailer.delivery_method = :smtp
-# SMTP settings for gmail
-  config.action_mailer.smtp_settings = {
- :address              => "smtp.gmail.com",
- :port                 => 587,
- :user_name            => ENV['gmail_username'],
- :password             => ENV['gmail_password'],
- :authentication       => "login",
-:enable_starttls_auto => true
-}
-
-# Send email in development mode?
-  config.action_mailer.perform_deliveries = true
+  endz
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
