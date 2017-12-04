@@ -1,15 +1,22 @@
 <div>
-<%=@habit.title%>
-<%=@habit.description%>
-<%=@habit.weekly_goal%>
+<p><strong>Habit:</strong> <%=@habit.title%></p>
+
+<p><strong>Description:</strong> <%=@habit.description%></p>
+
+<p><strong>Weekly goal:</strong> <%=@habit.weekly_goal%> days/week</p>
 </div>
 
 <button><%=link_to "Delete", delete_habit_path(@habit), method: :delete%></button>
 <button><%=link_to "Edit", edit_habit_path(@habit)%></button>
 
-				
-<%= line_chart @weekly_count, xtitle: "Week", ytitle: "Completed",
-min: 0, max: 100,download: "boom" %>
+
+<p>Completion rate:</p>
+<%= line_chart @weekly_count,
+	xtitle: "Week",
+	ytitle: "Completed (%)",
+	min: 0,
+	max: 100,
+	download: "weekchart" %>
 
 
 
