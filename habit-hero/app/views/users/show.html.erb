@@ -35,43 +35,43 @@
       </div>
     </li>
 
-    <% @weekly_logs.each do |week| %>
+    <% @week_collection.each do |week| %>
       <li>
         <div class="col s5">
           <h4><%=week[:habit]%> </h4>
         </div>
         <div class="col s1">
-          <% if week[:week].include?(0) %>
+          <% if week[:week_days].include?(1) %>
             <i class='material-icons dp48'>check</i>
           <% end %>
         </div>
         <div class="col s1">
-          <% if week[:week].include?(1) %>
+          <% if week[:week_days].include?(2) %>
             <i class='material-icons dp48'>check</i>
           <% end %>
         </div>
         <div class="col s1">
-          <% if week[:week].include?(2) %>
+          <% if week[:week_days].include?(3) %>
             <i class='material-icons dp48'>check</i>
           <% end %>
         </div>
         <div class="col s1">
-          <% if week[:week].include?(3) %>
+          <% if week[:week_days].include?(4) %>
             <i class='material-icons dp48'>check</i>
           <% end %>
         </div>
         <div class="col s1">
-          <% if week[:week].include?(4) %>
+          <% if week[:week_days].include?(5) %>
             <i class='material-icons dp48'>check</i>
           <% end %>
         </div>
         <div class="col s1">
-          <% if week[:week].include?(5) %>
+          <% if week[:week_days].include?(6) %>
             <i class='material-icons dp48'>check</i>
           <% end %>
         </div>
         <div class="col s1">
-          <% if week[:week].include?(6) %>
+          <% if week[:week_days].include?(0) %>
             <i class='material-icons dp48'>check</i>
           <% end %>
         </div>

@@ -114,17 +114,21 @@ habit_seed_data = [
   }
 ]
 log_seed_data = [
+  # week 1
   DateTime.new(2017, 11, 27, 4, 5, 6),
   DateTime.new(2017, 11, 28, 3, 2, 4),
   DateTime.new(2017, 11, 29, 2, 5, 6),
-  DateTime.new(2017, 11, 30, 6, 7, 8),
+  DateTime.new(2017, 12, 1, 6, 7, 8),
+  DateTime.new(2017, 12, 3, 6, 7, 8),
+  # week 2
   DateTime.new(2017, 11, 21, 6, 7, 8),
-  DateTime.new(2017, 11, 21, 6, 7, 8),
-  DateTime.new(2017, 11, 21, 6, 7, 8),
-  DateTime.new(2017, 11, 21, 6, 7, 8),
+  DateTime.new(2017, 11, 22, 6, 7, 8),
+  DateTime.new(2017, 11, 23, 6, 7, 8),
+  DateTime.new(2017, 11, 26, 6, 7, 8),
+  # week 3
+  DateTime.new(2017, 11, 13, 6, 7, 8),
   DateTime.new(2017, 11, 15, 6, 7, 8),
-  DateTime.new(2017, 11, 15, 6, 7, 8),
-  DateTime.new(2017, 11, 15, 6, 7, 8)
+  DateTime.new(2017, 11, 17, 6, 7, 8)
 ]
 
 User.destroy_all
