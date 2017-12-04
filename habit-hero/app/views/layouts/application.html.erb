@@ -16,10 +16,10 @@
 
         <ul class="right hide-on-med-and-down">
           <% if current_user %>
+            <li><%= link_to "Daily Tracker", daily_tracker_path%></li>
+            <li><%= link_to "Your Profile", user_path %></li>
             <li><%= link_to "Donation", new_charge_path%></li>
-            <li><%= link_to "Profile", user_path %></li>
             <li><%= link_to "Log Out", logout_path %></li>
-            <li><%= link_to "HabitHero", daily_tracker_path%></li>
           <% else %>
             <li><%= link_to "Donation", new_charge_path%></li>
             <li><%= link_to "Sign Up ", new_user_path %></li>
