@@ -1,7 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <title>HabitHero</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
+  </head>
+
   <body>
+    <nav>
+      <div class="nav-wrapper container">
+        <a href="#" class="brand-logo">Habit Hero</a>
+        <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+
+        <ul class="right hide-on-med-and-down">
+          <% if current_user %>
+            <li><%= link_to "Donation", new_charge_path%></li>
+            <li><%= link_to "Profile", user_path %></li>
+            <li><%= link_to "Log Out", logout_path %></li>
+            <li><%= link_to "HabitHero", daily_tracker_path%></li>
+          <% else %>
+            <li><%= link_to "Donation", new_charge_path%></li>
+            <li><%= link_to "Sign Up ", new_user_path %></li>
+            <li><%= link_to "Log In", login_path %></li>
+          <% end %>
+        </ul>
+        <ul class="slide-nav" id="mobile-nav">
+          <% if current_user %>
+            <li><%= link_to "Profile", user_path(current_user) %></li>
+            <li><%= link_to "Log Out", logout_path %></li>
+            <li><%= link_to "HabitHero", habits_path%></li>
+          <% else %>
+            <li><%= link_to "Sign Up ", new_user_path %></li>
+            <li><%= link_to "Log In", login_path %></li>
+          <% end %>
+        </ul>
+
+      </div>
+    </nav>
+    <% flash.each do |name, msg| %>
+      <p>
+        <small> <%= name.capitalize %>: <%= msg %> </small>
+      </p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
