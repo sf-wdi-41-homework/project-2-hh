@@ -1,3 +1,4 @@
+<h4>Edit Habit</h4>
 <%= form_with scope: :habit, url: update_habit_path(@habit), method: :put do |form| %>
 <label>Title:</label>
 <%= form.text_field :title%>
@@ -7,5 +8,5 @@
 <%= form.text_area :weekly_goal%>
 
 
-<%= form.submit "Submit" %>
+<%= form.submit "Update habit" %>
 <% end%>
