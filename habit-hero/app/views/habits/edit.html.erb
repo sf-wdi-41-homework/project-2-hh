@@ -1,12 +1,20 @@
-<h4>Edit Habit</h4>
-<%= form_with scope: :habit, url: update_habit_path(@habit), method: :put do |form| %>
-<label>Title:</label>
-<%= form.text_field :title%>
-<label>Description</label>
-<%= form.text_area :description%>
-<label>WeeklyGoal</label>
-<%= form.text_area :weekly_goal%>
+<section id="habit-edit" class="container">
+  <h3>Edit Habit</h3>
+  <%= form_with scope: :habit, url: update_habit_path(@habit), method: :put do |form| %>
 
+    <div class="input-field">
+      <%= form.text_field :title, class: 'validate', placeholder: "Habit", required: true %>
+      <%= form.label :title %>
+    </div>
+    <div class="input-field">
+      <%= form.text_area :description, class: 'materialize-textarea', placeholder: "Description", required: true%>
+      <%= form.label :Description%>
+    </div>
+    <div class="input-field">
+      <%= form.number_field :weekly_goal, class: 'validate', placeholder: "Weekly_goal", min: '1', max: '7', required: true%>
+      <%= form.label :weekly_goal %>
+    </div>
 
-<%= form.submit "Update habit" %>
-<% end%>
+    <%= form.submit "Update habit" , class: ' waves-effect waves-green btn' %>
+  <% end%>
+</section>

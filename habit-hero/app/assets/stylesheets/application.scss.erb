@@ -11,6 +11,12 @@ $primary-color: color("blue", "lighten-2") !default;
 
  #flash-message{
    @extend .green, .lighten-4;
+   &.error{
+     @extend .red, .lighten-4;
+     .container p{
+       @extend .red-text, .darken-4;
+     }
+   }
    .container{
      p{
        @extend .green-text, .darken-4;

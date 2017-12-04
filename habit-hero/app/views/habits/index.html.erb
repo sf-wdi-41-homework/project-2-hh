@@ -14,7 +14,6 @@
 		<li class="row">
 			<div class="col s8">
 				<h4><%= habit[:habit_obj].title%></h4>
-				<button><%=link_to "show", show_habit_path(habit[:habit_obj])%></button>
 			</div>
 			<div class="col s4">
 				<% if !habit[:completed]%>
@@ -35,11 +34,7 @@
 		</li>
 		<% end %>
 	</ul>
+	<button data-target="new-habit-modal" id="new-habit-button" class="btn btn-large modal-trigger">Add habit</button>
 </section>
 
-<div class="container">
-
-</div>
-
-<button data-target="new-habit-modal" id="new-habit-button" class="btn modal-trigger">Add habit</button>
 <%= render 'new_habit' %>
