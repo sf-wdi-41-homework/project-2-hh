@@ -12,6 +12,7 @@
     <nav>
       <div class="nav-wrapper container">
         <a href="#" class="brand-logo">Habit Hero</a>
+        <%= link_to "Habit Hero", root_path, class: 'brand-logo' %>
         <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
 
         <ul class="right hide-on-med-and-down">
@@ -40,9 +41,14 @@
       </div>
     </nav>
     <% flash.each do |name, msg| %>
-      <p>
-        <small> <%= name.capitalize %>: <%= msg %> </small>
-      </p>
+    <div id="flash-message">
+      <div class="container">
+        <p>
+          <%= name.capitalize %>: <%= msg %> 
+        </p>
+      </div>
+
+    </div>
     <% end %>
     <%= yield %>
   </body>

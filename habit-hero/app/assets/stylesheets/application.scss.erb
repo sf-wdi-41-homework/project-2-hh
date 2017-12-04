@@ -9,6 +9,19 @@ $primary-color: color("blue", "lighten-2") !default;
 
  }
 
+ #flash-message{
+   @extend .green, .lighten-4;
+   .container{
+     p{
+       @extend .green-text, .darken-4;
+       text-transform: capitalize;
+       margin: 0px;
+       font-size: 1.5em;
+        padding: 20px 0px;
+     }
+   }
+ }
+
  #welcome{
    background: url(<%= asset_path 'home_cover.jpg' %>) no-repeat;
    background-size: cover;
