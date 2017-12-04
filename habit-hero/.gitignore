@@ -3,7 +3,7 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
-/habit-hero/tmp/*
+/tmp/*
 !/log/.keep
 !/tmp/.keep
 
