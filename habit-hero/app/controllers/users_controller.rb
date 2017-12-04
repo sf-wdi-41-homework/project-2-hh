@@ -16,31 +16,20 @@ class UsersController < ApplicationController
 			flash[:error] = @user.errors.full_messages.join(' ')
 			redirect_to "/signup"
 		end
-	
+
 	end
 	def show
     @user = User.find(session[:user_id])
 		habits = @user.habits
-    # @weekly_logs will be sent to views in order to render logs per habit per day
+    # @week_collection will be sent to views in order to render logs per habit per day
 		@week_collection = []
 		habits.each do |habit|
-      # week_hash will contain the logs for each habit
-			# logs_hash holds logs for each habit
-			week_hash = {}
-			logs_hash = habit.logged_habits.group_by_week(week_start: :mon) { |h| h.date_completed}
-			logs_hash.each_pair do |key, value|
-				week_hash[key] = {habit: habit.title, week: []}
-				value.each do |log|
-					week_hash[key][:week] << log.date_completed.localtime.to_date.wday
-				end
-				@week_collection << week_hash
+			week_hash = {habit: habit.title, week_days: []}
+			LoggedHabit.where(habit_id: habit.id, date_completed: DateTime.now.beginning_of_week(start_day = :monday).utc...DateTime.now.utc).each do |log|
+				week_hash[:week_days] << log.date_completed.localtime.wday
 			end
+			@week_collection << week_hash
 		end
-
-		@week_collection.each do | week|
-			p week
-		end
-		p @user
   end
 
   def edit
