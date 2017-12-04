@@ -38,11 +38,15 @@ class HabitsController < ApplicationController
 		habits = user.habits.all
 		@habit = habits.find(params[:id])
 		weekly_count = @habit.logged_habits.group_by_week(:date_completed, week_start: :mon).count
-		p weekly_count
 		@weekly_count = {}
-		weekly_count.each_pair do | key, value | 
-			@weekly_count[key] = (value.to_f / @habit.weekly_goal.to_f) * 100.00
-		end 
+		@max_percent = 100
+		weekly_count.each_pair do | key, value |
+			percent = (value.to_f / @habit.weekly_goal.to_f) * 100.00
+			@weekly_count[key] = percent
+			if percent > @max_percent
+				@max_percent = percent.round
+			end
+		end
 	end
 
 	def destroy

@@ -1,25 +1,19 @@
-<div>
-<p><strong>Habit:</strong> <%=@habit.title%></p>
+<section id="habit-view" class="container">
 
-<p><strong>Description:</strong> <%=@habit.description%></p>
+	<h2><strong>Habit:</strong> <%=@habit.title%></h2>
+	<h4><strong>Description:</strong> <%=@habit.description%></h4>
+	<h4><strong>Weekly goal:</strong> <%=@habit.weekly_goal%> days/week</h4>
 
-<p><strong>Weekly goal:</strong> <%=@habit.weekly_goal%> days/week</p>
-</div>
+	<%=link_to "Edit", edit_habit_path(@habit), class: "btn"%></button>
+	<%=link_to "Delete", delete_habit_path(@habit), method: :delete, class: "btn"%>
 
-<button><%=link_to "Delete", delete_habit_path(@habit), method: :delete%></button>
-<button><%=link_to "Edit", edit_habit_path(@habit)%></button>
-
-
-<p>Completion rate:</p>
-<%= line_chart @weekly_count,
+	<p>Completion rate:</p>
+	<%= line_chart @weekly_count,
 	xtitle: "Week",
 	ytitle: "Completed (%)",
 	min: 0,
-	max: 100,
+	max: @max_percent,
+	colors: ["#64B5F6"],
 	download: "weekchart" %>
 
-
-
-
-
-
+</section>

@@ -1,17 +1,20 @@
 <div id="new-habit-modal" class="modal modal-fixed-footer">
 	<div class="modal-content">
 		<%= form_with scope: :habit, url: "/habits" do|f|%>
-			<div>
-				<%= f.text_field :title, class: 'validate', placeholder: "Habit" %>
+			<div class="input-field">
+				<%= f.text_field :title, class: 'validate', placeholder: "Habit", required: true %>
+				<%= f.label :title %>
 			</div>
-			<div>
-				<%= f.text_area :description, class: 'materialize-textarea', placeholder: "Description" %>
+			<div class="input-field">
+				<%= f.text_area :description, class: 'materialize-textarea', placeholder: "Description", required: true%>
+				<%= f.label :Description%>
 			</div>
-			<div>
-				<%= f.number_field :weekly_goal, class: 'validate', placeholder: "Weekly_goal" %>
+			<div class="input-field">
+				<%= f.number_field :weekly_goal, class: 'validate', placeholder: "Weekly_goal", min: '1', max: '7', required: true%>
+				<%= f.label :weekly_goal %>
 			</div>
 
-			<%= f.submit "Save Habit", class: ' waves-effect waves-green btn-flat' %>
+			<%= f.submit "Save Habit", class: ' waves-effect waves-green btn' %>
 		<% end %>
 	</div>
 	<div class="modal-footer">

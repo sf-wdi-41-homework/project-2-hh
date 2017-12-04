@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     # @week_collection will be sent to views in order to render logs per habit per day
 		@week_collection = []
 		habits.each do |habit|
-			week_hash = {habit: habit.title, week_days: []}
+			week_hash = {habit: habit, week_days: []}
 			LoggedHabit.where(habit_id: habit.id, date_completed: DateTime.now.beginning_of_week(start_day = :monday).utc...DateTime.now.utc).each do |log|
 				week_hash[:week_days] << log.date_completed.localtime.wday
 			end
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   def update
 		@user = User.find_by_id(params[:id])
 		@user.update(user_params)
-		redirect_to @user
+		redirect_to user_path
 	end
 	def destroy
 		user = User.find(params[:id])
