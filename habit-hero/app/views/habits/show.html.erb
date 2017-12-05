@@ -8,7 +8,7 @@
 	<%=link_to "Delete", delete_habit_path(@habit), method: :delete, class: "btn"%>
 
 	<p>Completion rate:</p>
-	<%= line_chart @weekly_count,
+	<%= line_chart @weekly_data,
 	xtitle: "Week",
 	ytitle: "Completed (%)",
 	min: 0,
