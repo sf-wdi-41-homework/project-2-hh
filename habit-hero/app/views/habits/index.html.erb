@@ -13,13 +13,13 @@
 
 		<li class="row">
 			<div class="col s8">
-				<h4><%= habit[:habit_obj].title%></h4>
+				<h4><%= habit.title%></h4>
 			</div>
 			<div class="col s4">
 				<% if !habit[:completed]%>
 					<%= form_with scope: :logged_habit, id: "habit_check#{i}",url: "/logged_habits" do|f|%>
 						<div>
-							<%= f.hidden_field :habit_id, value: "#{habit[:habit_obj].id}"%>
+							<%= f.hidden_field :habit_id, value: "#{habit.id}"%>
 						</div>
 						<div>
 							<%= f.check_box :checkbox, id: "#{i}",  :onclick => "javascript: document.getElementById('habit_check#{i}').submit();"%>
